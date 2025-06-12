@@ -18,7 +18,6 @@ pip-selfcheck.json
 
 # Environment variables
 .env
-.env.*
 
 # Pytest
 .cache/
