@@ -1,14 +1,11 @@
 from fastapi import FastAPI
 from dotenv import load_dotenv
-import os
+from app.api.spotify_routes import router as spotify_router
 
 app = FastAPI()
 load_dotenv()
 
-client_id= os.getenv("SPOTIFY_CLIENT_ID")
-client_secret = os.getenv("SPOTIFY_CLIENT_SECRET")
-
-print(client_id, client_secret)
+app.include_router(spotify_router, prefix="/spotify")
 
 @app.get("/")
 async def root():
