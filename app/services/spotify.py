@@ -9,5 +9,3 @@ def search_artist(artist_name, limit=1):
     params = {"q": artist_name, "type": "artist", "limit": limit}
     result = get(url, headers=headers, params=params)
     return result.json()
-
-print(search_artist("ACDC"))
