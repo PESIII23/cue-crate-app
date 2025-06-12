@@ -28,6 +28,7 @@ services:
   cuecrate-backend:
     build:
       context: .
+      dockerfile: docker/Dockerfile
     container_name: cuecrate-backend
     env_file:
       - .env
