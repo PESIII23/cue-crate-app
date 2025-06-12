@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: cuecrate
+      POSTGRES_PASSWORD: vinyl_db3
+      POSTGRES_DB: cuecrate_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.13.4
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - logger.level=WARN
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    restart: always
+
+  cuecrate-backend:
+    build:
+      context: .
+    container_name: cuecrate-backend
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - elasticsearch
+    restart: always
+
+volumes:
+  pgdata:

@@ -1,8 +1,7 @@
-fastapi
-uvicorn[standard]
-sqlalchemy
 asyncpg
+elasticsearch
+fastapi
 python-dotenv
 requests
-authlib
-elasticsearch
+sqlalchemy
+uvicorn[standard]
