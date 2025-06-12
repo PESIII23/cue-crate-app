@@ -126,6 +126,8 @@ cuecrate/
   `docker rm <container_id>`
 - **Stop all services:**  
   `docker-compose down`
+- **Start all services:**  
+  `docker-compose up --build`
 
 ---
 
