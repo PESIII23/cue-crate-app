@@ -8,7 +8,14 @@ CueCrate is a backend service built with **FastAPI** and **Docker**. It provides
 
 ### 1. **Clone the Repository**
 
+**Mac/Linux:**
 ```sh
+git clone https://github.com/yourusername/cuecrate.git
+cd cuecrate
+```
+
+**Windows (Command Prompt):**
+```cmd
 git clone https://github.com/yourusername/cuecrate.git
 cd cuecrate
 ```
@@ -19,8 +26,14 @@ cd cuecrate
 
 1. **Duplicate the `.env.example` file in the `backend/` directory and rename the copy to `.env`:**
 
+   **Mac/Linux:**
    ```sh
    cp backend/.env.example backend/.env
+   ```
+
+   **Windows (Command Prompt):**
+   ```cmd
+   copy backend\.env.example backend\.env
    ```
 
 2. **Open the new `.env` file and replace the placeholder values with your actual credentials and configuration, as provided in the project Google Doc.**
@@ -31,6 +44,7 @@ cd cuecrate
 
 This will start the backend, PostgreSQL, and Elasticsearch with a single command.
 
+**Mac/Linux/Windows (in the `cuecrate` directory):**
 ```sh
 docker-compose up --build
 ```
@@ -51,6 +65,7 @@ docker-compose down
 
 #### **Install dependencies**
 
+**Mac/Linux:**
 ```sh
 cd backend
 python3 -m venv .venv
@@ -59,9 +74,24 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+**Windows (Command Prompt):**
+```cmd
+cd backend
+python -m venv .venv
+.venv\Scripts\activate
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
 #### **Start the server**
 
+**Mac/Linux:**
 ```sh
+uvicorn app.main:app --reload
+```
+
+**Windows (Command Prompt):**
+```cmd
 uvicorn app.main:app --reload
 ```
 
