@@ -1,4 +1,4 @@
-from app.services.spotify_auth import get_token, get_auth_header
+from app.services.spotify_auth_service import get_token, get_auth_header
 import requests
 
 class SpotifyClient:

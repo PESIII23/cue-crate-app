@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Query
-from app.services.spotify import search_artist, search_track
+from app.services.spotify_search_service import search_artist, search_track
 
 router = APIRouter()
 

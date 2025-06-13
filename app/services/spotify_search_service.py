@@ -1,4 +1,4 @@
-from app.utils.spotify_client import SpotifyClient
+from app.utils.spotify_api_client import SpotifyClient
 
 def search_artist(artist_name, limit=10):
     client = SpotifyClient()
