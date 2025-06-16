@@ -13,31 +13,5 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.13.4
-    container_name: elasticsearch
-    environment:
-      - discovery.type=single-node
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
-      - logger.level=WARN
-    ports:
-      - "9200:9200"
-      - "9300:9300"
-    restart: always
-
-  cuecrate-backend:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile
-    container_name: cuecrate-backend
-    env_file:
-      - .env
-    ports:
-      - "8000:8000"
-    depends_on:
-      - postgres
-      - elasticsearch
-    restart: always
-
 volumes:
   pgdata:
