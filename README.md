@@ -17,13 +17,14 @@ cd cuecrate
 
 ### 2. **Configure Environment Variables**
 
-1. **Duplicate the `.env.example` file in the `backend/` directory and rename the copy to `.env`:**
+Create a `.env` file in the `backend/` directory with your Spotify credentials:
 
-   ```sh
-   cp backend/.env.example backend/.env
-   ```
+```
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+```
 
-2. **Open the new `.env` file and replace the placeholder values with your actual credentials and configuration, as provided in the project Google Doc.**
+You can use `.env.example` as a template.
 
 ---
 

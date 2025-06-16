@@ -1,0 +1,2 @@
+GET http://localhost:8000/spotify/search/artist?q=The%20Weeknd
+Accept: application/json

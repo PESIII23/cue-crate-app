@@ -6,16 +6,24 @@ class SpotifyClient:
         self.token = get_token()
         self.headers = get_auth_header(self.token)
 
-    def search_artist(self, name, limit=10):
+    def search_artist(self, artist_name: str, limit: int = 10):
         url = "https://api.spotify.com/v1/search"
-        params = {"q": name, "type": "artist", "limit": limit}
+        params = {
+            "q": artist_name,
+            "type": "artist",
+            "limit": limit
+        }
         response = requests.get(url, headers=self.headers, params=params)
         response.raise_for_status()
         return response.json()
 
-    def search_track(self, name, limit=10):
+    def search_track(self, track_name: str, limit: int = 10):
         url = "https://api.spotify.com/v1/search"
-        params = {"q": name, "type": "track", "limit": limit}
+        params = {
+            "q": track_name,
+            "type": "track",
+            "limit": limit
+        }
         response = requests.get(url, headers=self.headers, params=params)
         response.raise_for_status()
         return response.json()
